@@ -11,6 +11,9 @@
 void parse_and_execute(char *line, stack_t **stack, unsigned int line_number)
 {
 	char *opcode, *n_str;
+	size_t leading_whitespace = strspn(line, " \t");
+
+	line += leading_whitespace;
 
 	opcode = strtok(line, "\n\t\r ");
 	if (opcode == NULL || opcode[0] == '#')
