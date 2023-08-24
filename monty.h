@@ -35,4 +35,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } intruction_t;
 
+/* prototypes */
+void parse_and_execute(char *line, stack_t **stack, unsigned int line_number);
+int _isdigit(char *str);
+
 #endif /* MONTY_H */
