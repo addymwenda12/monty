@@ -20,10 +20,10 @@ void parse_and_execute(char *line, stack_t **stack, unsigned int line_number)
 		n_str = strtok(NULL, "\n\t\r ");
 		if (n_str == NULL || _isdigit(n_str) == 0)
 		{
-			fprintf(stderr, "L&d: usage push integer\n", line_number);
+			fprintf(stderr, "L%d: usage push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
-		push(stack, line_number, atoi(n_str));
+		push(stack, atoi(n_str));
 	}
 	else if (strcmp(opcode, "pall") == 0)
 	{
@@ -31,7 +31,7 @@ void parse_and_execute(char *line, stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		fprintf(stderr, "L&d: unknown instruction &s\n", line_number, opcode);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
 	}
 }
