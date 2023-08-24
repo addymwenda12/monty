@@ -29,7 +29,7 @@ void push(stack_t **stack, const int n)
 }
 
 /**
- * pall - prints all the values on the satck, starting from the
+ * pall - prints all the values on the stack, starting from the
  * top of the stack
  * @stack: double pointer to the head of the stack
  * @line_number: line number
