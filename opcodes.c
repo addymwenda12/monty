@@ -27,3 +27,24 @@ void push(stack_t **stack, unsigned int line_number, const int n)
 	}
 	*stack = new;
 }
+
+/**
+ * pall - prints all the values on the satck, starting from the
+ * top of the stack
+ * @stack: double pointer to the head of the stack
+ * @line_number: line number
+ * 
+ * Return: void
+*/
+void pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+
+	(void) line_number;
+	current = *stack;
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
+}
